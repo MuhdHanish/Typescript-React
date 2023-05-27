@@ -1,18 +1,15 @@
 import {useState} from 'react';
+interface Props {
+  items  : string[],
+  heading : string
+}
 
-const ListGroup = () => {
- const items = [
-  'NewYork',
-  'Los Angeles',
-  'Chicago',
-  'Houston',
-  'Phoenix',
-  'Philadelphia'
- ]  
+const ListGroup = ({items,heading}:Props) => {
+
   const [selectIndex,setSelectedIndex] = useState(-1)
   return (
     <>
-      <h1>List Group</h1>
+      <h1>{heading}</h1>
       { items.length!==0 &&
        <ul className="list-group">
         {
